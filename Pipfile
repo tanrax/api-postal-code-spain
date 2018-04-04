@@ -1,0 +1,23 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[dev-packages]
+
+ipdb = "*"
+
+
+[packages]
+
+gunicorn = "==19.7.1"
+Flask = "==0.12.1"
+flask_cors = "==3.0.3"
+flask_restplus = "==0.10.1"
+pandas = "==0.22.0"
+
+[requires]
+
+python_version = "3.6"

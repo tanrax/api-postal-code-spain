@@ -29,7 +29,8 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 @app.route(PRE_URL + 'index/<int:id>')
 def index(id):
     match = POSTALS.loc[[id]]
-    return match.reset_index().to_json(orient='records')
+    results = match.filter(items=['postal_code', 'poblacion', 'lat', 'lng'])
+    return results.reset_index().to_json(orient='records')
 
 
 # Get data from postal code

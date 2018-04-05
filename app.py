@@ -25,13 +25,20 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 # Routes
 # =========================
 
+# Get data from index
+@app.route(PRE_URL + 'index/<int:id>')
+def index(id):
+    match = POSTALS.loc[[id]]
+    return match.reset_index().to_json(orient='records')
+
 
 # Get data from postal code
-@app.route(PRE_URL + 'geolocation/<int:code>')
-def geolocation(code):
+@app.route(PRE_URL + 'postal_code/<int:code>')
+def postal_code(code):
     match = POSTALS[POSTALS['postal_code'].isin([code])]
     results = match.filter(items=['postal_code', 'poblacion', 'lat', 'lng'])
     return results.reset_index().to_json(orient='records')
+
 
 
 if __name__ == "__main__":

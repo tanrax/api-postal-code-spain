@@ -1,25 +1,85 @@
-# API POSTAL CODE WALLAVISO
+# API para Códigos postales de España
 
-## URL
+Sencilla API para obtener información de los códigos postales de España. Obteniendo información como:
 
-https://hidden-sierra-35586.herokuapp.com
+- Código postal.
+- Población.
+- Latitud.
+- Longitud.
 
-## REQUESTS
+## Llamadas
 
-### Get for index
-https://hidden-sierra-35586.herokuapp.com/api/v1/index/{integer}
+### Obtener todos los datos de un código postal
 
-### Get for postal code
-https://hidden-sierra-35586.herokuapp.com/api/v1/postal_code/{integer}
+``` bash
+https://hidden-sierra-35586.herokuapp.com/api/v1/postal_code/{numero}
+```
 
-## INSTALL
+Ejemplo
+
+``` bash
+https://hidden-sierra-35586.herokuapp.com/api/v1/postal_code/46017
+```
+
+``` json
+[
+  {
+    "index": 461021,
+    "postal_code": 46017,
+    "poblacion": "Santa Margarida de Montbui",
+    "lat": 41.55659597,
+    "lng": 1.60489809
+  },
+  {
+    "index": 461022,
+    "postal_code": 46017,
+    "poblacion": "Pampliega",
+    "lat": 42.20619881,
+    "lng": -3.98797885
+  },
+  {
+    "index": 461023,
+    "postal_code": 46017,
+    "poblacion": "Villanueva de Guadamejud",
+    "lat": 40.22470982,
+    "lng": -2.50703229
+  },
+  ...
+]
+```
+
+### Obtener por index (indice)
+
+``` bash
+https://hidden-sierra-35586.herokuapp.com/api/v1/index/{indice}
+```
+
+Ejemplo
+
+``` bash
+https://hidden-sierra-35586.herokuapp.com/api/v1/index/461021
+```
+
+``` json
+[
+  {
+    "index": 461021,
+    "postal_code": 46017,
+    "poblacion": "Santa Margarida de Montbui",
+    "lat": 41.55659597,
+    "lng": 1.60489809
+  }
+]
+```
+
+## Instalación
 
 ```bash
 pipenv install
 pipenv shell
 ```
 
-## RUN
+Después solo debes arrancarlo.
 
 ```bash
 python3 app.py

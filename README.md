@@ -9,6 +9,8 @@ Sencilla API para obtener información de los códigos postales de España. Obte
 
 ## Llamadas
 
+Lamentablemente Heroku [anunció que eliminaría sus planes gratuitos](https://help.heroku.com/RSBRUH58/removal-of-heroku-free-product-plans-faq) provocando que los ejemplos de esta lección no estén disponibles para probarlos con `curl`, ya que estaba desplegado en un Dyno gratutito. Puedes testearlo directamente en tu equipo.
+
 ### Obtener todos los datos de un código postal
 
 ``` bash
